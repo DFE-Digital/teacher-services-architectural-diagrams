@@ -12,4 +12,4 @@ These diagrams aim to inform about the _users_ and _integrations_ around the sys
 
 | Diagram | Description |
 | --- | --- |
-|  | |
+| <img src="Teacher_Trainee_Landscape_Diagram.png" width="280"/>  | Show the landscape of the DTTP (database for teacher trainees & providers data) application |

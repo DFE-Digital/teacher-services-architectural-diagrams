@@ -1,0 +1,14 @@
+---
+elements:
+  -
+    type: 'Software System'
+    name: 'My Software System'
+    description: ""
+    tags: ""
+    position: '1015,664'
+relationships: []
+styles: []
+type: 'System Context'
+scope: 'My Software System'
+description: 'The system context diagram for my software system.'
+size: A5_Landscape
