@@ -1,0 +1,146 @@
+links:
+  The FC4 Framework: https://fundingcircle.github.io/fc4-framework/
+  Structurizr Express: https://structurizr.com/express
+---
+type: System Landscape
+scope: Teacher Services Landscape Diagram
+description: System Landscape diagram for Teacher Services - WIP
+
+elements:
+- type: Person
+  name: Corporate Assurance team
+  description: 'null'
+  position: '4225,1750'
+- type: Person
+  name: Funding Team
+  description: 'null'
+  position: '4525,1250'
+- type: Person
+  name: TAD
+  description: ITT Analysis Unit
+  position: '3925,1350'
+- type: Person
+  name: Teach first
+  description: 'null'
+  position: '3725,1750'
+- type: Person
+  name: Teacher
+  description: A qualified teacher
+  tags: external
+  position: '4025,250'
+- type: Person
+  name: Teacher Trainee
+  description: A teacher trainee using Gov Services
+  tags: external
+  position: '1225,1950'
+- type: Person
+  name: Teacher Training provider
+  description: An organisation or partnership of organisations offering programmes that train people to teach in schools in England
+  tags: external
+  position: '1225,1250'
+- type: Software System
+  name: Apply for teacher training
+  description: A service for applying to teacher training courses
+  tags: web
+  position: '100,900'
+- type: Software System
+  name: DQT - Database of Qualified Teachers
+  description: 'null'
+  position: '3200,300'
+- type: Software System
+  name: DTTP - Database of Teacher Trainers & Providers
+  description: Stores all of the core banking information about customers, accounts, transactions, etc.
+  tags: web
+  position: '2300,1100'
+- type: Software System
+  name: Find teacher training
+  description: A service for candidates to find courses by location, provider or subject
+  tags: web
+  position: '100,300'
+- type: Software System
+  name: GIAS - Get information about schools
+  description: A service for candidates to find courses by location, provider or subject
+  position: '1200,300'
+- type: Software System
+  name: HESA - Higher Education Statistics Agency
+  tags: external
+  position: '2300,1900'
+- type: Software System
+  name: UCAS
+  tags: external
+  position: '100,1700'
+
+relationships:
+- source: Apply for teacher training
+  description: pulls courses
+  destination: Find teacher training
+- source: Corporate Assurance team
+  description: uses data from
+  destination: DTTP - Database of Teacher Trainers & Providers
+- source: DTTP - Database of Teacher Trainers & Providers
+  description: pulls TRN
+  destination: DQT - Database of Qualified Teachers
+- source: DTTP - Database of Teacher Trainers & Providers
+  description: pulls data
+  destination: HESA - Higher Education Statistics Agency
+- source: Funding Team
+  description: uses data from
+  destination: DTTP - Database of Teacher Trainers & Providers
+- source: GIAS - Get information about schools
+  description: sends data
+  destination: Apply for teacher training
+  technology: HTTPS
+- source: GIAS - Get information about schools
+  description: sends data
+  destination: DQT - Database of Qualified Teachers
+  technology: HTTPS
+- source: GIAS - Get information about schools
+  description: sends data
+  destination: DTTP - Database of Teacher Trainers & Providers
+  technology: HTTPS
+- source: HESA - Higher Education Statistics Agency
+  description: pulls TRN
+  destination: DQT - Database of Qualified Teachers
+- source: TAD
+  description: uses data from
+  destination: DTTP - Database of Teacher Trainers & Providers
+- source: Teach first
+  description: uses data
+  destination: DTTP - Database of Teacher Trainers & Providers
+- source: Teacher Trainee
+  description: uses
+  destination: Apply for teacher training
+  technology: HTTPS
+- source: Teacher Trainee
+  description: applies
+  destination: UCAS
+- source: Teacher Training provider
+  description: applies
+  destination: Apply for teacher training
+- source: Teacher Training provider
+  description: SCITT and Lead schools provider input data
+  destination: DTTP - Database of Teacher Trainers & Providers
+- source: Teacher Training provider
+  description: HEI providers submit data
+  destination: HESA - Higher Education Statistics Agency
+- source: Teacher
+  description: uses
+  destination: DQT - Database of Qualified Teachers
+
+styles:
+- type: element
+  tag: Element
+  background: '#347ca9'
+  color: '#ffffff'
+- type: element
+  tag: Person
+  shape: Person
+- type: element
+  tag: external
+  background: '#28a197'
+  color: '#ffffff'
+- type: element
+  tag: web
+  shape: WebBrowser
+
+size: A3_Landscape
