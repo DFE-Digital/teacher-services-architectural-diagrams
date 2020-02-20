@@ -17,6 +17,7 @@ Teacher Services is divided into different service areas, with their respective 
 
 | Service area | Location | Responsibility |
 | ------------ | -------- | -------------- |
+| Teacher trainee & provider data | [`diagrams/teacher-trainees-and-providers-data`](diagrams/teacher-trainees-and-providers-data)| Collates information from Initial Teacher Training (ITT) providers and makes it available to DfE to facilitate a range of business requirements |
 
 ## Conventions
 
@@ -31,4 +32,3 @@ Teacher Services is divided into different service areas, with their respective 
 [simonbrown]: http://simonbrown.je/
 [fc4-toolset]: https://fundingcircle.github.io/fc4-framework/methodology/toolset.html
 [moj-websafe]: https://github.com/alphagov/govuk_frontend_toolkit/blob/03204449dcbf28c2d48e7f6dd217f6abe9b3a518/stylesheets/colours/_organisation.scss#L17
-

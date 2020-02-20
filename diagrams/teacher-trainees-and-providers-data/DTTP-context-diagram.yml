@@ -1,0 +1,102 @@
+links:
+  The FC4 Framework: https://fundingcircle.github.io/fc4-framework/
+  Structurizr Express: https://structurizr.com/express
+---
+type: System Context
+scope: DTTP - Database of Teacher Trainers & Providers
+description: The system context diagram for my software system.
+
+elements:
+- type: Person
+  name: Corporate Assurance team
+  description: 'null'
+  position: '2425,1350'
+- type: Person
+  name: Funding Team
+  description: 'null'
+  position: '2725,550'
+- type: Person
+  name: TAD
+  description: ITT Analysis Unit
+  position: '2125,850'
+- type: Person
+  name: Teach first
+  description: 'null'
+  position: '1925,1450'
+- type: Person
+  name: Teacher Training provider
+  description: An organisation or partnership of organisations offering programmes that train people to teach in schools in England
+  tags: external
+  position: '1125,50'
+- type: Software System
+  name: DQT - Database of Qualified Teachers
+  description: 'null'
+  position: '200,1500'
+- type: Software System
+  name: DTTP - Database of Teacher Trainers & Providers
+  description: Stores all of the core banking information about customers, accounts, transactions, etc.
+  tags: web
+  position: '800,900'
+- type: Software System
+  name: GIAS - Get information about schools
+  description: A service for candidates to find courses by location, provider or subject
+  position: '1000,1600'
+- type: Software System
+  name: HESA - Higher Education Statistics Agency
+  tags: external
+  position: '100,200'
+
+relationships:
+- source: Corporate Assurance team
+  description: uses data from
+  destination: DTTP - Database of Teacher Trainers & Providers
+- source: DTTP - Database of Teacher Trainers & Providers
+  description: pulls TRN
+  destination: DQT - Database of Qualified Teachers
+- source: DTTP - Database of Teacher Trainers & Providers
+  description: pulls data
+  destination: HESA - Higher Education Statistics Agency
+- source: Funding Team
+  description: uses data from
+  destination: DTTP - Database of Teacher Trainers & Providers
+- source: GIAS - Get information about schools
+  description: sends data
+  destination: DQT - Database of Qualified Teachers
+  technology: HTTPS
+- source: GIAS - Get information about schools
+  description: sends data
+  destination: DTTP - Database of Teacher Trainers & Providers
+  technology: HTTPS
+- source: HESA - Higher Education Statistics Agency
+  description: pulls TRN
+  destination: DQT - Database of Qualified Teachers
+- source: TAD
+  description: uses data from
+  destination: DTTP - Database of Teacher Trainers & Providers
+- source: Teach first
+  description: uses data
+  destination: DTTP - Database of Teacher Trainers & Providers
+- source: Teacher Training provider
+  description: SCITT and Lead schools provider input data
+  destination: DTTP - Database of Teacher Trainers & Providers
+- source: Teacher Training provider
+  description: HEI providers submit data
+  destination: HESA - Higher Education Statistics Agency
+
+styles:
+- type: element
+  tag: Element
+  background: '#347ca9'
+  color: '#ffffff'
+- type: element
+  tag: Person
+  shape: Person
+- type: element
+  tag: external
+  background: '#28a197'
+  color: '#ffffff'
+- type: element
+  tag: web
+  shape: WebBrowser
+
+size: A4_Landscape
