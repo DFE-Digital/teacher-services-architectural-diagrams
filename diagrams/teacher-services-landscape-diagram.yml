@@ -89,10 +89,6 @@ relationships:
   destination: DTTP - Database of Teacher Trainers & Providers
 - source: GIAS - Get information about schools
   description: sends data
-  destination: Apply for teacher training
-  technology: HTTPS
-- source: GIAS - Get information about schools
-  description: sends data
   destination: DQT - Database of Qualified Teachers
   technology: HTTPS
 - source: GIAS - Get information about schools
