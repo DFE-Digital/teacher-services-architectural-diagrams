@@ -108,14 +108,13 @@ relationships:
   description: uses data
   destination: DTTP - Database of Teacher Trainers & Providers
 - source: Teacher Trainee
-  description: uses
+  description: applies to provider using
   destination: Apply for teacher training
-  technology: HTTPS
 - source: Teacher Trainee
-  description: applies
+  description: applies to provider using
   destination: UCAS
 - source: Teacher Training provider
-  description: applies
+  description: manages applications using
   destination: Apply for teacher training
 - source: Teacher Training provider
   description: SCITT and Lead schools provider input data
