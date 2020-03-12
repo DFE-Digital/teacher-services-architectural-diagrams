@@ -40,7 +40,7 @@ elements:
   position: '1225,1250'
 - type: Software System
   name: Apply for teacher training
-  description: A service for applying to teacher training courses
+  description: A service for applying to teacher training courses. Currently in public beta. Scheduled to replace UCAS in October 2021.
   tags: web
   position: '100,900'
 - type: Software System
@@ -67,6 +67,7 @@ elements:
   position: '2300,1900'
 - type: Software System
   name: UCAS
+  description: The existing service to apply for teacher training. DfE's Apply service is intended to replace UCAS in October 2021.
   tags: external
   position: '100,1700'
 
@@ -88,10 +89,6 @@ relationships:
   destination: DTTP - Database of Teacher Trainers & Providers
 - source: GIAS - Get information about schools
   description: sends data
-  destination: Apply for teacher training
-  technology: HTTPS
-- source: GIAS - Get information about schools
-  description: sends data
   destination: DQT - Database of Qualified Teachers
   technology: HTTPS
 - source: GIAS - Get information about schools
@@ -108,14 +105,13 @@ relationships:
   description: uses data
   destination: DTTP - Database of Teacher Trainers & Providers
 - source: Teacher Trainee
-  description: uses
+  description: applies to provider using
   destination: Apply for teacher training
-  technology: HTTPS
 - source: Teacher Trainee
-  description: applies
+  description: applies to provider using
   destination: UCAS
 - source: Teacher Training provider
-  description: applies
+  description: manages applications using
   destination: Apply for teacher training
 - source: Teacher Training provider
   description: SCITT and Lead schools provider input data
